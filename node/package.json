@@ -1,6 +1,6 @@
 {
   "name": "hyperclip",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official Node SDK for the Hyperclip API — create, poll, and manage flow runs.",
   "license": "MIT",
   "homepage": "https://hyperclip.co",

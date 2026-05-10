@@ -1,5 +1,9 @@
 # hyperclip
 
+[![npm](https://img.shields.io/npm/v/hyperclip.svg)](https://www.npmjs.com/package/hyperclip)
+[![npm downloads](https://img.shields.io/npm/dm/hyperclip.svg)](https://www.npmjs.com/package/hyperclip)
+[![license](https://img.shields.io/npm/l/hyperclip.svg)](https://github.com/hyperclip/hyperclip-sdks/blob/main/LICENSE)
+
 Official Node SDK for the [Hyperclip](https://hyperclip.co) API. Trigger flow runs, poll for completion, and pull the final video URL — without writing fetch boilerplate.
 
 ## Install

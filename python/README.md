@@ -1,5 +1,9 @@
 # hyperclipco
 
+[![PyPI](https://img.shields.io/pypi/v/hyperclipco.svg)](https://pypi.org/project/hyperclipco/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/hyperclipco.svg)](https://pypi.org/project/hyperclipco/)
+[![Python versions](https://img.shields.io/pypi/pyversions/hyperclipco.svg)](https://pypi.org/project/hyperclipco/)
+
 Official Python SDK for the [Hyperclip](https://hyperclip.co) API.
 
 > Installed as `hyperclipco` (the unscoped `hyperclip` name was already taken on PyPI). Imports as `hyperclipco`.

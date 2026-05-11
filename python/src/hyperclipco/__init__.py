@@ -4,4 +4,4 @@ from .client import Hyperclip
 from .errors import HyperclipError, HyperclipTimeoutError
 
 __all__ = ["Hyperclip", "HyperclipError", "HyperclipTimeoutError"]
-__version__ = "0.1.1"
+__version__ = "0.1.2"

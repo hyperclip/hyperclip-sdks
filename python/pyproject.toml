@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hyperclipco"
-version = "0.1.1"
+version = "0.1.2"
 description = "Official Python SDK for the Hyperclip API — create, poll, and manage flow runs."
 readme = "README.md"
 license = "MIT"

@@ -12,12 +12,14 @@ import type {
 
 const TERMINAL_STATUSES = new Set(["completed", "failed", "cancelled"]);
 
+const DEFAULT_BASE_URL = "https://zjasnfhprfiftozodqsz.supabase.co/functions/v1/api-v1";
+
 export interface HyperclipOptions {
   /** API key (`hck_live_<prefix>.<secret>`). Falls back to `HYPERCLIP_API_KEY`. */
   apiKey?: string;
   /**
-   * Full base URL — e.g. `https://your-project.supabase.co/functions/v1/api-v1`.
-   * Falls back to `HYPERCLIP_BASE_URL`.
+   * Override the API base URL. Defaults to Hyperclip production.
+   * Falls back to `HYPERCLIP_BASE_URL` for staging/self-hosted setups.
    */
   baseUrl?: string;
   /** Override the global fetch (e.g. for testing). */
@@ -31,16 +33,10 @@ export class Hyperclip {
 
   constructor(options: HyperclipOptions = {}) {
     const apiKey = options.apiKey ?? process.env.HYPERCLIP_API_KEY;
-    const baseUrl = options.baseUrl ?? process.env.HYPERCLIP_BASE_URL;
+    const baseUrl = options.baseUrl ?? process.env.HYPERCLIP_BASE_URL ?? DEFAULT_BASE_URL;
     if (!apiKey) {
       throw new Error(
         "Hyperclip: missing apiKey. Pass `apiKey` or set HYPERCLIP_API_KEY.",
-      );
-    }
-    if (!baseUrl) {
-      throw new Error(
-        "Hyperclip: missing baseUrl. Pass `baseUrl` or set HYPERCLIP_BASE_URL " +
-          "(e.g. https://your-project.supabase.co/functions/v1/api-v1).",
       );
     }
     this.apiKey = apiKey;

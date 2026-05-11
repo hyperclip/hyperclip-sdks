@@ -10,6 +10,8 @@ from .errors import HyperclipError, HyperclipTimeoutError
 
 _TERMINAL = {"completed", "failed", "cancelled"}
 
+_DEFAULT_BASE_URL = "https://zjasnfhprfiftozodqsz.supabase.co/functions/v1/api-v1"
+
 
 class Hyperclip:
     """Synchronous client for the Hyperclip REST API."""
@@ -23,15 +25,10 @@ class Hyperclip:
         client: Optional[httpx.Client] = None,
     ) -> None:
         api_key = api_key or os.environ.get("HYPERCLIP_API_KEY")
-        base_url = base_url or os.environ.get("HYPERCLIP_BASE_URL")
+        base_url = base_url or os.environ.get("HYPERCLIP_BASE_URL") or _DEFAULT_BASE_URL
         if not api_key:
             raise ValueError(
                 "Hyperclip: missing api_key. Pass api_key= or set HYPERCLIP_API_KEY."
-            )
-        if not base_url:
-            raise ValueError(
-                "Hyperclip: missing base_url. Pass base_url= or set HYPERCLIP_BASE_URL "
-                "(e.g. https://your-project.supabase.co/functions/v1/api-v1)."
             )
         self._api_key = api_key
         self._base_url = base_url.rstrip("/")

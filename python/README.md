@@ -22,10 +22,7 @@ Requires Python 3.9+.
 import os, uuid
 from hyperclipco import Hyperclip
 
-hc = Hyperclip(
-    api_key=os.environ["HYPERCLIP_API_KEY"],
-    base_url="https://YOUR-PROJECT.supabase.co/functions/v1/api-v1",
-)
+hc = Hyperclip(api_key=os.environ["HYPERCLIP_API_KEY"])
 
 ref = hc.runs.create(
     flow_id="a3c7f1ea-1234-4abc-bb11-5faed63c7e90",
@@ -49,7 +46,7 @@ else:
 | Argument | Env var | Required |
 |---|---|---|
 | `api_key` | `HYPERCLIP_API_KEY` | yes |
-| `base_url` | `HYPERCLIP_BASE_URL` | yes |
+| `base_url` | `HYPERCLIP_BASE_URL` | no (defaults to Hyperclip production) |
 | `timeout` | — | no (defaults to 30s) |
 | `client` | — | no (inject your own `httpx.Client`) |
 

@@ -21,7 +21,6 @@ import { Hyperclip } from "hyperclip";
 
 const hc = new Hyperclip({
   apiKey: process.env.HYPERCLIP_API_KEY,
-  baseUrl: "https://YOUR-PROJECT.supabase.co/functions/v1/api-v1",
 });
 
 const { id } = await hc.runs.create({
@@ -46,7 +45,7 @@ if (run.status === "completed") {
 | Option | Env var | Required |
 |---|---|---|
 | `apiKey` | `HYPERCLIP_API_KEY` | yes |
-| `baseUrl` | `HYPERCLIP_BASE_URL` | yes |
+| `baseUrl` | `HYPERCLIP_BASE_URL` | no (defaults to Hyperclip production) |
 | `fetch` | — | no (defaults to global) |
 
 ## API
